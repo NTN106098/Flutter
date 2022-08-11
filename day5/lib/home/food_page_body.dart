@@ -43,7 +43,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       children: [
         Container(
       // color: Colors.redAccent,
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
             controller: pageController,
             itemCount: 5,
@@ -128,12 +128,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   ]    
               ),
               child: Container(
-                padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+                padding:  EdgeInsets.only(top: Dimensions.height15, left: 15, right: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BigText(text: "Lẩu Thập Cẩm"),
-                    const SizedBox(height: 10,),
+                    SizedBox(height: Dimensions.height10,),
                     Row(
                       children: [
                         Wrap(
@@ -148,7 +148,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                        
                      ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height:Dimensions.height20,),
                      Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
