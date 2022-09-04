@@ -5,23 +5,19 @@ import '../data/api/api_client.dart';
 import '../widgets/app_constants.dart';
 
 class SetUpBinding extends Bindings {
+  Future close() async {
+    Get.reset();
+  }
 
-
-    Future close() async {
-        Get.reset();
-    }
-
-
-    @override
-  Future dependencies() async   {
+  @override
+  Future dependencies() async {
     // TODO: implement dependencies
     //api client
-    Get.lazyPut(() => ApiClient(appBaseUrl:"http://mvs.bslmeiyu.com"));
+    Get.lazyPut(() => ApiClient(appBaseUrl: "http://mvs.bslmeiyu.com"));
     //reponse
     Get.lazyPut(() => PopularProductRepo(apiClient: Get.find()));
 
     //controller
     Get.lazyPut(() => PopularProductController(popularProductRepo: Get.find()));
   }
-
 }
