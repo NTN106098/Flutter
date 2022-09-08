@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 
 class PopularProductController extends GetxController  {
   final PopularProductRepo popularProductRepo;
+
   PopularProductController({ required this.popularProductRepo});
+
   List<ProductModel> _popularProductList = [];
   List<ProductModel> get PopularProductList => _popularProductList;
   
@@ -15,13 +17,14 @@ class PopularProductController extends GetxController  {
     try{
 
       if(reponse.statusCode==200) {
-        print("go products");
+        print("Got products from the server");
       _popularProductList = [];
       _popularProductList.addAll(Product.fromJson(reponse.body).products);
+      
       update();
 
     }else{
-      print("No products");
+      print("Error occurred and the error is" + reponse.body);
     }
     }catch(e) {
       print("Error in the controller is" + e.toString());
