@@ -59,7 +59,7 @@ class _HomeLoginState extends State<HomeLogin> {
                     style: TextStyle(fontSize: 15, color: Colors.black),
                     decoration: InputDecoration(
                         labelText: "USERNAME",
-                        errorText: snapshot.hasError ? snapshot.error : null,
+                        // errorText: snapshot.hasError ? snapshot.error : null,
                         labelStyle:
                             TextStyle(color: Color(0xff888888), fontSize: 15)),
                   ),
@@ -77,7 +77,7 @@ class _HomeLoginState extends State<HomeLogin> {
                       obscureText: !_showPass,
                       decoration: InputDecoration(
                           labelText: "PASSWORD",
-                          errorText: snapshot.hasError ? snapshot.error : null,
+                          // errorText: snapshot.hasError({}) ? snapshot.error : null,
                           labelStyle: TextStyle(
                               color: Color(0xff888888), fontSize: 15)),
                     ),

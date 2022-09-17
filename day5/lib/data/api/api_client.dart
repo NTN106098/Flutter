@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:day5/utils/app_constants.dart';
-import 'package:http/http.dart' as http;
 
 class ApiClient extends GetConnect implements GetxService {
   //late String token;
@@ -10,7 +9,7 @@ class ApiClient extends GetConnect implements GetxService {
 
   ApiClient({required this.appBaseUrl}) {
     baseUrl = appBaseUrl;
-    timeout = Duration(seconds: 30);
+    timeout = const Duration(seconds: 5);
     token = AppConstants.TOKEN;
     _mainHeaders = {
       'Content-type': 'application/json; charset=UTF-8',
@@ -25,7 +24,7 @@ class ApiClient extends GetConnect implements GetxService {
 
       return response;
     } catch (e) {
-      print("Error from the api client is" + e.toString());
+      // print("Error from the api client is" + e.toString());.
       return Response(statusCode: 1, statusText: e.toString());
     }
   }
